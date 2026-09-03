@@ -1,0 +1,49 @@
+
+<div class="card">
+  <div class="card-body">
+    <ul class="list-group">
+
+      <li
+        *ngFor="let todo of getTodos"
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+
+        <strong class="col-3">
+          {{todo.title}}
+        </strong>
+
+        <strong class="col-5 border-start ps-3">
+          {{todo.description}}
+        </strong>
+
+        <strong class="col-2 border-start ps-3">
+          {{todo.iscompleted}}
+        </strong>
+
+        <div class="col-2 border-start ps-3 d-flex justify-content-end">
+
+          <button
+            (click)="onEditTodo(todo)"
+            mat-mini-fab
+            color="primary"
+            class="me-2"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button
+            (click)="onRemove(todo)"
+            mat-mini-fab
+            color="warn"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+
+        </div>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+
