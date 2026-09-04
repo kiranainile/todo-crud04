@@ -25,7 +25,13 @@ export class TodoListComponent implements OnInit {
 
   onRemove(todo: Itodo) {
     console.log(todo);
+    
+
+    let isConfirm=confirm("Are you sure you want to delete it ?")
+
+    if(isConfirm){
      this.emitRemoveId.emit(todo);
+    }
 
    
   }

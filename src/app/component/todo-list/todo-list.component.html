@@ -1,49 +1,59 @@
-
 <div class="card">
   <div class="card-body">
-    <ul class="list-group">
 
-      <li
-        *ngFor="let todo of getTodos"
-        class="list-group-item d-flex justify-content-between align-items-center"
-      >
+    <table class="table">
+      
+   
+      <thead>
+        <tr>
+          <th>Todo Item</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
 
-        <strong class="col-3">
-          {{todo.title}}
-        </strong>
+   
+      <tbody>
+        <tr *ngFor="let todo of getTodos">
 
-        <strong class="col-5 border-start ps-3">
-          {{todo.description}}
-        </strong>
+          <td>
+            <strong>
+              {{ todo.title }}
+            </strong>
+          </td>
 
-        <strong class="col-2 border-start ps-3">
-          {{todo.iscompleted}}
-        </strong>
+          <td>
+            {{ todo.description }}
+          </td>
 
-        <div class="col-2 border-start ps-3 d-flex justify-content-end">
+          <td>
+            {{ todo.iscompleted }}
+          </td>
 
-          <button
-            (click)="onEditTodo(todo)"
-            mat-mini-fab
-            color="primary"
-            class="me-2"
-          >
-            <mat-icon>edit</mat-icon>
-          </button>
+          <td>
+            <button
+              (click)="onEditTodo(todo)"
+              mat-mini-fab
+              color="primary"
+              class="me-2"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
 
-          <button
-            (click)="onRemove(todo)"
-            mat-mini-fab
-            color="warn"
-          >
-            <mat-icon>delete</mat-icon>
-          </button>
+            <button
+              (click)="onRemove(todo)"
+              mat-mini-fab
+              color="warn"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
 
-        </div>
+        </tr>
+      </tbody>
 
-      </li>
+    </table>
 
-    </ul>
   </div>
 </div>
-
